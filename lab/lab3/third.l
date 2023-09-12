@@ -4,8 +4,8 @@
     #include<ctype.h>
 %}
 %%
-[a-z] {putchar(toupper(yytext[0]));}
-[A-Z] {putchar(tolower(yytext[0]));}
+[a-z] {putchar(yytext[0]-32);}
+[A-Z] {putchar(yytext[0]+32);}
 . {putchar(yytext[0]);}
 %%
 int yywrap(void){return 0;}
